@@ -1,0 +1,15 @@
+python src/lerobot/scripts/lerobot_train.py\
+    --dataset.repo_id=timt119/sanity_test_single_screw_center_pick_n_drop \
+    --policy.type=pi05 \
+    --output_dir=./outputs/lerobot_so101_sanity_pick_and_drop \
+    --job_name=lerobot_so101_sanity_pick_and_drop \
+    --policy.repo_id=timt119/lerobot_so101_sanity_pick_and_drop \
+    --policy.pretrained_path=lerobot/pi05_base \
+    --policy.compile_model=false \
+    --policy.gradient_checkpointing=true \
+    --wandb.enable=true \
+    --policy.dtype=bfloat16 \
+    --steps=10 \
+    --policy.device=cuda \
+    --batch_size=2 \
+    --log_freq=1
