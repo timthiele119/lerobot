@@ -110,7 +110,22 @@ def make_dataset(cfg: TrainPipelineConfig) -> LeRobotDataset | MultiLeRobotDatas
                 max_num_shards=cfg.num_workers,
             )
     else:
-        raise NotImplementedError("The MultiLeRobotDataset isn't supported for now.")
+        # raise NotImplementedError("The MultiLeRobotDataset isn't supported for now.")
+        
+        """
+        this is from constructor, need to adapt it
+        
+        Args:
+            repo_ids: list[str],
+            root: str | Path | None = None,
+            episodes: dict | None = None,
+            image_transforms: Callable | None = None,
+            delta_timestamps: dict[str, list[float]] | None = None,
+            tolerances_s: dict | None = None,
+            download_videos: bool = True,
+            video_backend: str | None = None,
+        """
+        
         dataset = MultiLeRobotDataset(
             cfg.dataset.repo_id,
             # TODO(aliberts): add proper support for multi dataset
